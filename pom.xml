@@ -8,5 +8,19 @@
     <artifactId>hometask2</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <ver.java>1.8</ver.java>
+    </properties>
 
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${ver.java}</source>
+                    <target>${ver.java}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

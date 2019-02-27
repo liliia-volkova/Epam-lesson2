@@ -5,16 +5,20 @@ public class Variables {
 
         int a = 3;
         int b = 9;
-        System.out.println("a = " + a + ", " + "b = " + b);
+        print(a, b);
 
         a += b;
-        System.out.println("a = " + a + ", " + "b = " + b);
+        print(a, b);
 
         b = a - b;
-        System.out.println("a = " + a + ", " + "b = " + b);
+        print(a, b);
 
         a = a - b;
-        System.out.println("a = " + a + ", " + "b = " + b);
-       }
+        print(a, b);
     }
+
+    private static void print(int a, int b) {
+        System.out.println(String.format("a = %d, b = %d", a, b));
+    }
+}
 

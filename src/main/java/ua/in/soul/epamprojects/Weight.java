@@ -4,21 +4,22 @@ import java.util.Scanner;
 
 public class Weight {
     public static void main(String[] args) {
-        double kg = 0.4536;
-        double f;
+        double poundToKilogramRate = 0.4536;
+        double pounds;
 
         System.out.println("Введите значение веса в фунтах");
-        Scanner sc = new Scanner(System.in);
-        String w = sc.next();
-        f = Double.parseDouble(w);
+        Scanner scanner = new Scanner(System.in);
+        String weight = scanner.next();
 
-        f *= kg;
-        System.out.println(f + " кг");
+        pounds = Double.parseDouble(weight);
 
-        int k = (int) f;
+        pounds *= poundToKilogramRate;
+        System.out.println(pounds + " кг");
+
+        int k = (int) pounds;
         System.out.print(k + " кг ");
 
-        double g = (f % k) * 1000;
+        double g = (pounds % k) * 1000;
         int gr = (int) g;
         System.out.println(gr + " г");
     }
