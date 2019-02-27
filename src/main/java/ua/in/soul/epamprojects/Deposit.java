@@ -8,21 +8,30 @@ public class Deposit {
 
         System.out.println("Введите значение депозита в гривнах");
         Scanner scd = new Scanner(System.in);
-        String deposit = scd.next();
+        String depositStr = scd.next();
 
         System.out.println("Введите количество месяцев");
         Scanner scm = new Scanner(System.in);
-        String months = scm.next();
+        String monthsStr = scm.next();
 
         System.out.println("Введите значение годового процента, %");
         Scanner scp = new Scanner(System.in);
-        String percent = scp.next();
+        String percentStr = scp.next();
 
-        double p = Double.parseDouble(percent);
-        double m = Double.parseDouble(months);
-        double d = Double.parseDouble(deposit);
+        double yearlyPercentage = Double.parseDouble(percentStr);
+        double deposit = Double.parseDouble(depositStr);
 
-        double profit = (p * m * (d / 100));
-        System.out.println("Ваша прибыль " + profit + " грн");
+        int months = Integer.parseInt(monthsStr);
+        double monthlyPercentage = yearlyPercentage / 12;
+
+        double currentAmount = deposit;
+
+        for (int i = 0; i < months; i++) {
+            double profit = currentAmount * (monthlyPercentage / 100);
+            currentAmount += profit;
+
+            System.out.println(String.format("Ваша прибыль %.2f грн", profit));
+            System.out.println(String.format("Итого на счету %.2f грн. в месяце №%d", currentAmount, i + 1));
+        }
     }
 }
